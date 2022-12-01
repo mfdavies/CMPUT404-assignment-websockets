@@ -83,7 +83,10 @@ myWorld = World()
 
 def set_listener( entity, data ):
     ''' do something with the update ! '''
-    
+    new_entity = {}
+    new_entity[entity] = data
+    send_all_json(new_entity)
+
 myWorld.add_set_listener( set_listener )
         
 @app.route('/')
